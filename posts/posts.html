@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+    <h1>Posts</h1>
+    <nav>
+        <button id="view-posts-tab">View Posts</button>
+        <button id="create-post-tab">Create Post</button>
+    </nav>
+</header>
+
+<main>
+    <!-- View Posts Section -->
+    <section id="view-posts-section">
+        <h2>All Posts</h2>
+        <div id="search-sort-controls">
+            <input type="text" id="search-keyword" placeholder="Search keyword">
+            <select id="search-type">
+                <option value="title">Title</option>
+                <option value="content">Content</option>
+                <option value="title+content">Title + Content</option>
+            </select>
+            <select id="sort-field">
+                <option value="createdAt">Date</option>
+                <option value="likenum">Likes</option>
+                <option value="commentnum">Comments</option>
+            </select>
+            <select id="sort-by">
+                <option value="desc">Descending</option>
+                <option value="asc">Ascending</option>
+            </select>
+            <button id="search-button">Search</button>
+        </div>
+        <ul id="posts-list"></ul>
+        <div id="pagination-controls">
+            <button id="prev-page">Previous</button>
+            <span id="current-page">1</span>
+            <button id="next-page">Next</button>
+        </div>
+    </section>
+
+    <!-- Create Post Section -->
+    <section id="create-post-section" style="display: none;">
+        <h2>Create a New Post</h2>
+        <form id="create-post-form">
+            <input type="text" id="post-title-input" placeholder="Title" required>
+            <textarea id="post-content-input" placeholder="Content" required></textarea>
+            <input type="file" id="post-images" multiple>
+            <button type="submit">Create Post</button>
+        </form>
+    </section>
+
+    <!-- Post Detail Section -->
+    <section id="post-detail-section" style="display: none;">
+        <h2>Post Details</h2>
+        <h3 id="post-title"></h3>
+        <p id="post-author"></p>
+        <p id="post-content"></p>
+        <div id="load-post-images"></div>
+        <p id="post-likes"></p>
+        <button id="like-post-button">Like</button>
+        <button id="unlike-post-button">Unlike</button>
+        <button id="edit-post-button">Edit Post</button>
+        <button id="delete-post-button">Delete Post</button>
+        <form id="update-post-form" style="display: none;">
+            <input type="text" id="update-title-input" placeholder="Update Title" required>
+            <textarea id="update-content-input" placeholder="Update Content" required></textarea>
+            <input type="file" id="update-post-images" multiple>
+            <button type="submit">Update Post</button>
+        </form>
+        <ul id="post-comments"></ul>
+        <form id="add-comment-form">
+            <textarea id="new-comment" placeholder="Write a comment" required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+        <button id="back-to-list">Back to Posts</button>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Posts Management</p>
+</footer>
+
+<script src="posts.js"></script>
+</body>
+</html>

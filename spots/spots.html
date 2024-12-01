@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoking Spots Management</title>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=n8ovbs0ra9"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header>
+    <h1>Smoking Spots Management</h1>
+</header>
+
+<main>
+    <!-- 지도 표시 -->
+    <section id="map-section">
+        <h2>Spot Map</h2>
+        <div id="map" style="width: 600px; height: 500px;"></div>
+        <div id="search-section">
+            <input type="text" id="search-keyword" placeholder="Enter region or keyword">
+            <select id="search-type">
+                <option value="address">Address</option>
+                <option value="name">Name</option>
+                <option value="description">Description</option>
+            </select>
+            <button id="search-button">Search</button>
+        </div>
+
+    </section>
+
+    <!-- 스팟 생성 -->
+    <section id="create-spot-section">
+        <h2>Create a New Spot</h2>
+        <form id="create-spot-form">
+            <input type="text" id="spot-name" placeholder="Spot Name" required>
+            <textarea id="spot-description" placeholder="Description" required></textarea>
+            <input type="hidden" id="spot-latitude">
+            <input type="hidden" id="spot-longitude">
+            <button type="submit">Create Spot</button>
+        </form>
+    </section>
+
+    <!-- 스팟 상세 정보 -->
+    <section id="spot-detail-section" style="display: none;">
+        <h2>Spot Details</h2>
+        <div id="spot-detail"></div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Smoking Spots Management</p>
+</footer>
+
+<script src="spots.js"></script>
+</body>
+</html>
